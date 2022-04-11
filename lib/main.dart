@@ -1,14 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/quiz.dart';
+import 'package:flutter_complete_guide/result.dart';
+import 'quiz.dart';
+import "result.dart";
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  var person1 = Person();
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return MyAppState();
+  }
+}
 
-  var questions = [
-    "what is your name?",
-    "how is your age?",
+class MyAppState extends State<MyApp> {
+  final questions = [
+    {
+      "questionText": "question1",
+      "answer": ["one", "two", "three"],
+    },
+    {
+      "questionText": "question2",
+      "answer": ["red", "green", "blue"],
+    },
+    {
+      "questionText": "question3",
+      "answer": ["coffe", "tea", "milk"],
+    },
   ];
+
+  var questionIndex = 0;
+  void _aswerQuestion() {
+    setState(() {
+      questionIndex = questionIndex + 1;
+    });
+
+    if (questionIndex < questions.length) {}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,23 +45,13 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("My First App"),
         ),
-        body: Column(
-          children: [
-            Text("question"),
-            ElevatedButton(
-              onPressed: null,
-              child: Text("answer 1"),
-            ),
-            ElevatedButton(
-              onPressed: null,
-              child: Text("answer 2"),
-            ),
-            ElevatedButton(
-              onPressed: null,
-              child: Text("answer 3"),
-            ),
-          ],
-        ),
+        body: questionIndex < questions.length
+            ? Quiz(
+                questions: questions,
+                questionIndex: questionIndex,
+                answerQuestion: _aswerQuestion,
+              )
+            : Result(),
       ),
     );
   }
@@ -44,4 +62,10 @@ class Person {
   int age;
 
   Person({this.name = "prasetion", this.age = 28});
+
+  Person.baby({this.name = "tio", this.age = 5});
+
+  Person.veryOld(this.name) {
+    age = 60;
+  }
 }

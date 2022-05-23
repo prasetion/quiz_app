@@ -1,17 +1,8 @@
-# quiz_app
+# Quiz App
 
-A new Flutter project.
+Learning basic flutter. Stateless and statefull widget.
 
-## Getting Started
+## Preview
 
-This project is a starting point for a Flutter application.
+![2022_05_23_14_36_02_trim](https://user-images.githubusercontent.com/9270545/169769600-b9afa90f-3d96-441b-ac49-d64c20a7f945.gif)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# quiz_app
